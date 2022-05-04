@@ -16,7 +16,7 @@ class CreateCanvasesTable extends Migration
         Schema::create('canvases', function (Blueprint $table) {
           $table->increments('id');
           $table->string('name');
-          $table->text('canvas');
+          $table->longText('canvas');
           $table->integer('user_id');
           $table->string('user_name');
           $table->string('country');

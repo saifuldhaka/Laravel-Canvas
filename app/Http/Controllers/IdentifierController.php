@@ -49,7 +49,7 @@ class IdentifierController extends Controller
         if($request->file('photo')){
           $file= $request->file('photo');
           $filename= date('YmdHi').$file->getClientOriginalName();
-          $file-> move(public_path('public/Image'), $filename);
+          $file-> move(public_path('image'), $filename);
 
           $identifier = new Identifier([
               'name' => $request->name,
@@ -114,7 +114,7 @@ class IdentifierController extends Controller
       if($request->file('photo')){
         $file= $request->file('photo');
         $filename= date('YmdHi').$file->getClientOriginalName();
-        $file-> move(public_path('public/Image'), $filename);
+        $file-> move(public_path('image'), $filename);
 
         $data = [
           'name' => $request->name,

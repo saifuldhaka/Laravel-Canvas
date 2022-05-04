@@ -34,7 +34,7 @@
             </div>
 
             <div class="form-group">
-              <img src="{{ url('public/Image/'.$identifier->photo) }}" style="height: 100px;">
+              <img src="{{ url('image/'.$identifier->photo) }}" style="height: 100px;">
             </div>
             <div class="form-group">
               <label for="photo">photo:</label>
