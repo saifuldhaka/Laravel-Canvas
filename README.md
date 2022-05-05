@@ -5,7 +5,9 @@ php artisan migrate
 
 ## Run Laravel Canvas
 php artisan serve
+
 or
+
 php -S localhost:8000 -t public
 
 
