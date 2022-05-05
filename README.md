@@ -1,9 +1,14 @@
 ## Configure database in env file
 DB_CONNECTION=mysql
+
 DB_HOST=
+
 DB_PORT=3306
+
 DB_DATABASE=
+
 DB_USERNAME=
+
 DB_PASSWORD=
 
 ## Run migration command
