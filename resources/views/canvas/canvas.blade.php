@@ -27,9 +27,8 @@
                    <th colspan = 2>Actions</th>
                  </tr>
              </thead>
-
-
              <tbody>
+               @if(count($canvases) > 0)
                  @foreach($canvases as $canvas)
                  <tr>
                      <td>{{$canvas->name}}</td>
@@ -48,6 +47,13 @@
                      </td>
                  </tr>
                  @endforeach
+               @else
+               <tr>
+                 <td colspan=6 >
+                   No record found
+                 </td>
+               </tr>
+               @endif
              </tbody>
            </table>
 

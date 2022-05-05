@@ -5,6 +5,6 @@
     <title></title>
   </head>
   <body>
-    <img src="{{$canvas->canvas}}">
+    <img src="{{$canvas->canvas}}" style="width: fit-content;">
   </body>
 </html>

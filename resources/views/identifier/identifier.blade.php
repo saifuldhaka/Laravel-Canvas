@@ -17,7 +17,7 @@
            @endif
          </div>
          <div>
-           <a style="margin: 19px;" href="{{ route('identifier.create')}}" class="btn btn-primary">New contact</a>
+           <a style="margin: 19px;" href="{{ route('identifier.create')}}" class="btn btn-primary">New Identifier</a>
          </div>
          <table class="table table-striped">
             <thead>
@@ -30,30 +30,38 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($identifiers as $identifier)
+                @if(count($identifiers) > 0)
+                  @foreach($identifiers as $identifier)
+                  <tr>
+                      <td>
+                        <img src="{{ url('image/'.$identifier->photo) }}" style="height: 100px;">
+                      </td>
+                      <td>{{$identifier->name}} </td>
+                      <td>{{$identifier->country}}</td>
+                      <td>{{$identifier->organization}}</td>
+                      <td>
+                          <!-- <a href="{{ route('identifier.edit',$identifier->id)}}" class="btn btn-primary">Edit</a> -->
+                          <a href="{{ route('canvas.create',['id'=>$identifier->id])}}" class="btn btn-primary">Create Canvas</a>
+                      </td>
+                      <td>
+                          <a href="{{ route('identifier.edit',$identifier->id)}}" class="btn btn-primary">Edit</a>
+                      </td>
+                      <td>
+                          <form action="{{ route('identifier.destroy', $identifier->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                          </form>
+                      </td>
+                  </tr>
+                  @endforeach
+                @else
                 <tr>
-                    <td>
-                      <img src="{{ url('image/'.$identifier->photo) }}" style="height: 100px;">
-                    </td>
-                    <td>{{$identifier->name}} </td>
-                    <td>{{$identifier->country}}</td>
-                    <td>{{$identifier->organization}}</td>
-                    <td>
-                        <!-- <a href="{{ route('identifier.edit',$identifier->id)}}" class="btn btn-primary">Edit</a> -->
-                        <a href="{{ route('canvas.create',['id'=>$identifier->id])}}" class="btn btn-primary">Create Canvas</a>
-                    </td>
-                    <td>
-                        <a href="{{ route('identifier.edit',$identifier->id)}}" class="btn btn-primary">Edit</a>
-                    </td>
-                    <td>
-                        <form action="{{ route('identifier.destroy', $identifier->id)}}" method="post">
-                          @csrf
-                          @method('DELETE')
-                          <button class="btn btn-danger" type="submit">Delete</button>
-                        </form>
-                    </td>
+                  <td colspan=7>
+                    No record found
+                  </td>
                 </tr>
-                @endforeach
+                @endif
             </tbody>
           </table>
           <div class="text-justify">
