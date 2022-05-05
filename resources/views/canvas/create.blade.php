@@ -93,7 +93,7 @@
               <p> {{ $identifier->organization }} </p>
             </div>
             <div id="drag-4" class="draggable resize-drag">
-              <img src="{{ url('image/'.$identifier->photo) }}" alt="sample image" id="scale-element" style="height: 200px;">
+              <img src="{{ url('image/'.$identifier->photo) }}" alt="sample image" id="scale-element" >
             </div>
          </div>
 
@@ -133,7 +133,7 @@
 
              <input type="hidden" class="form-control" name="user_id" value="{{ $identifier->id }}"/>
              <input type="hidden" class="form-control" id="html_canvas" name="html_canvas" />
-             <button type="button" class="btn btn-primary-outline" onClick="convertBase64()">Add Canvas</button>
+             <button type="button" class="btn btn-primary-outline" onClick="convertBase64()">Save Canvas</button>
            </form>
          </div>
        </div>
