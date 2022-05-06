@@ -14,6 +14,9 @@ DB_PASSWORD=
 ## Run migration command
 php artisan migrate
 
+## Generate APP key
+php artisan key:generate
+
 ## Run Laravel Canvas
 php artisan serve
 
