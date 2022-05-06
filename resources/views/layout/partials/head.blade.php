@@ -8,4 +8,5 @@
 <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 <!-- Custom styles for this template -->
-<link href="/css/album.css" rel="stylesheet">
+<link href="{{ asset('/css/album.css') }}" rel="stylesheet">
+@yield('script')

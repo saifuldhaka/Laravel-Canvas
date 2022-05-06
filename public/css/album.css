@@ -37,3 +37,28 @@ footer p {
 }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.canvas-content{
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  padding: 15px;
+  background: #f0f0f0;
+}
+
+.draggable{
+  width: fit-content;
+  touch-action: none;
+  user-select: none;
+  transform: translate(0px, 0px);
+}
+
+#canvas-holder{
+  background: #fff;
+  min-height: 470px;
+}
+
+#canvas-content-holder{
+  background: #fff;
+  min-height: 470px;
+  padding: 10px;
+}

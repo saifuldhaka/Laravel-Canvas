@@ -1,7 +1,5 @@
 @extends('layout.mainlayout')
-@section('content')
-
-
+@section('script')
 <script type="module">
   import 'https://cdn.interactjs.io/v1.9.20/auto-start/index.js'
   import 'https://cdn.interactjs.io/v1.9.20/actions/drag/index.js'
@@ -61,30 +59,10 @@
   // this function is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener
 
-
 </script>
+@endsection
 
-
-<style>
-.canvas-content{
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 15px;
-  background: #f0f0f0;
-}
-.draggable{
-  width: fit-content;
-  touch-action: none;
-  user-select: none;
-  transform: translate(0px, 0px);
-}
-#canvas-content-holder{
-  background: #fff;
-  min-height: 470px;
-  padding: 10px;
-}
-</style>
-
+@section('content')
 
    <div class="album text-muted">
      <div class="container">
