@@ -11,7 +11,7 @@ class Identifier extends Model
     protected $fillable = [
         'name',
         'country',
-        'organisation',
+        'organization',
         'photo'
     ];
 }
