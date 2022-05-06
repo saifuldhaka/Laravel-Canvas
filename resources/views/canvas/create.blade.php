@@ -66,11 +66,22 @@
 
 
 <style>
-#drag-1, #drag-2, #drag-3, #drag-4 {
+.canvas-content{
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 15px;
+  background: #f0f0f0;
+}
+.draggable{
   width: fit-content;
   touch-action: none;
   user-select: none;
   transform: translate(0px, 0px);
+}
+#canvas-content-holder{
+  background: #fff;
+  min-height: 470px;
+  padding: 10px;
 }
 </style>
 
@@ -81,22 +92,22 @@
          <div class="col-sm-12">
            <h1 class="display-4">Create Canvas</h1>
          </div>
-         <div id="canvas-content-holder" class="col-sm-8" >
-
-            <div id="drag-1" class="draggable">
-              <p> {{ $identifier->name }} </p>
-            </div>
-            <div id="drag-2" class="draggable resize-drag">
-              <p> {{ $identifier->country }} </p>
-            </div>
-            <div id="drag-3" class="draggable resize-drag">
-              <p> {{ $identifier->organization }} </p>
-            </div>
-            <div id="drag-4" class="draggable resize-drag">
-              <img src="{{ url('image/'.$identifier->photo) }}" alt="sample image" id="scale-element" >
-            </div>
+         <div class="col-sm-8 canvas-content" >
+           <div id="canvas-content-holder" >
+              <div class="draggable">
+                <p> {{ $identifier->name }} </p>
+              </div>
+              <div class="draggable resize-drag">
+                <p> {{ $identifier->country }} </p>
+              </div>
+              <div class="draggable resize-drag">
+                <p> {{ $identifier->organization }} </p>
+              </div>
+              <div class="draggable resize-drag">
+                <img src="{{ url('image/'.$identifier->photo) }}" alt="sample image" id="scale-element" >
+              </div>
+           </div>
          </div>
-
          <div class="col-sm-4" style="min-height: 500px; border: 1px solid #ccc; ">
            <h1 class="display-6">Save Canvas</h1>
            @if ($errors->any())
